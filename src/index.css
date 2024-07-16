@@ -1,0 +1,23 @@
+.headerContainer{
+    margin-top: 20px;
+    background-color: rgb(65, 61, 61);
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+button{
+    font-size: larger;
+    background-color: #71b799; 
+    border: ;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+button:hover{
+    background-color: #04AA6D; /* Green */
+    color: white;
+  }
