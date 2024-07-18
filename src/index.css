@@ -1,16 +1,18 @@
 .headerContainer{
     margin-top: 20px;
-    background-color: rgb(65, 61, 61);
+    background-color: rgb(137, 131, 131);
     padding: 10px;
     border: 2px solid transparent;
     border-radius: 10px;
 }
 button{
     font-size: larger;
-    background-color: #71b799; 
+    font-weight: bolder;
+    background-color: rgb(85, 84, 84); 
     border: ;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 20px;
+    margin: 5px;
     text-align: center;
     text-decoration: none;
     display: inline-flex;
@@ -18,6 +20,25 @@ button{
     transition-duration: 0.4s;
   }
 button:hover{
-    background-color: #04AA6D; /* Green */
-    color: white;
+    background-color: rgba(85, 84, 84, 0.203); 
+    color: white(85, 84, 84, 0.274);
   }
+  .footer{
+    margin-top: 20px;
+    color: white;
+    background-color: rgb(137, 131, 131);
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+}
+#exampleInput{
+  width: 95%;
+  height: 25px;
+  font-size: larger;
+  padding: 10px;
+  border-radius: 10px;
+}
+#exampleInputHeader{  
+  font: larger;
+  margin-left: 15px;
+}

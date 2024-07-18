@@ -1,14 +1,16 @@
 
 function Header(){
     return (
+        <>
         <nav className="headerContainer">
             <button type="button" className="headerButton"> 
-                <a href="#">Kim's Contact List</a>
+                Kim's Contact List
             </button>
             <button type="button" className="headerButton1">
-                <a href="#">Add New Contact</a>
+                Add New Contact
             </button>
-        </nav>
+        </nav><br></br>
+        </>
       );    
 }
 export default Header
