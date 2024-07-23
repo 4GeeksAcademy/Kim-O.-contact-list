@@ -1,11 +1,49 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import ErrorPage from "./error-page";
+import Contact, { loader as contactLoader,} from "./routes/contact";
+import Root, { loader as rootLoader, action as rootAction, } from "./routes/root";
+import EditContact, { action as editAction, } from "./routes/edit";
+import { action as destroyAction } from "./routes/destroy";
+import Index from "./routes/index";
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    loader: rootLoader,
+    action: rootAction,
+    loader: contactLoader,
+    action: editAction,
+    children: [
+      { index: true, element: <Index /> },
+      {
+        path: "contacts/:contactId",
+        element: <Contact />,
+      },
+      {
+        path: "contacts/:contactId/edit",
+        element: <EditContact />,
+        loader: contactLoader,
+      },
+      {
+        path: "contacts/:contactId/destroy",
+        action: destroyAction,
+        errorElement: <div>Oops! There was an error.</div>,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
